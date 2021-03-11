@@ -604,7 +604,7 @@ class ConfigOptionsHandler(ConfigHandler):
             class_name = qualified_class_name[idx+1:]
             pkg_name = qualified_class_name[:idx]
 
-            module = __import__(pkg_name)
+            module = importlib.import_module(pkg_name)
 
             return getattr(module, class_name)
 
